@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Profile as Json</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  		//This is called ready handler
+  		$(function() {	
+  			//method - GET
+  			$.getJSON("http://localhost:3000/profiles", function(profiles) {
+  		          console.log(profiles);
+  		        var count=1;
+		         var tempData="";
+			      for(var x=0;x<profiles.length;x++) {
+			    	   var item=profiles[x];
+			      		console.log(item);
+				    	   tempData=tempData+'<tr>';
+				    	   tempData=tempData+'<td>&nbsp;'+count+'</td>';
+				    	   tempData=tempData+'<td>&nbsp;'+item.username+'</td>';
+				    	   tempData=tempData+'<td>&nbsp;'+item.password+'</td>';
+				    	   tempData=tempData+'<td>&nbsp;'+item.email+'</td>';
+				    	   tempData=tempData+'<td>&nbsp;'+item.gender+'</td>';
+				    	   tempData=tempData+'<td>&nbsp;<img src="'+item.photo+'" style="height:40px;"/></td>';
+				    	   tempData=tempData+'<td>&nbsp;<img src="img/delete.png" style="height:40px;"/>/<img src="img/edit.png" style="height:40px;"/></td>';
+				    	   tempData=tempData+'</tr>';
+				    	   count++;
+			      }	   
+			      tempData=tempData+' <tr>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'</tr>';
+			      tempData=tempData+'<tr>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'<td>&nbsp;</td>';
+			      tempData=tempData+'</tr>';
+			      
+			      $("#myContents").html(tempData);
+  		          
+  		    });  				
+  		});
+  </script>
+<style>
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #002340;;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    
+}
+</style>
+
+
+</head>
+<body>
+	<header style="background-color: #4caf50; height: 30px;font-weight: bold;font-size: 20px;font-family: rockwell;color:white;"> Welcome
+		to JavaScript Session! </header>
+		
+	<div class="container">	
+	 <br/>
+	<a href="register.jsp">
+		<img alt="" src="img/add.png" style="height: 80px;margin-right: 60px;"/>
+	</a>
+	<a href="profiles">
+	<img alt="" src="img/profile.png" style="height: 80px;margin-right: 60px;"/>
+	</a>
+	    <a href="login.jsp">
+					<img src="img/login.png" style="height: 80px;margin-right: 60px;" />
+		</a>
+		
+		  <a href="search.jsp">
+					<img src="img/search.png" style="height: 80px;"  />
+		</a>
+		<h3>
+			Profile Listing
+		</h3>
+			<!-- page scope - request scope- session scope - application scope -->
+	<hr />
+	<section>
+	
+		 <br/>		 <br/>
+		<table border="1" id="customers">
+			<tr>
+				<th>Sno :</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Email</th>
+				<th>Gender</th>
+					<th>Photo</th>
+				<th>Action</th>
+			</tr>
+			
+		<tbody  id="myContents">
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+	
+	</div>
+<div class="footer">
+  <p>Copyright © 2018 Angular2. All rights reserved</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Welcome Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+   			
+   			function calFact(){
+   				var pnum=document.cafForm.num.value;
+   				 $.getJSON("http://localhost:3000/fact?num="+pnum,function(data){
+   					  	 console.log(data);
+   					 	  if(data.status=="success") {
+   						 	  document.getElementById("message").innerHTML=data.result;
+   					   } 
+   				 });
+   			}
+   	
+   </script>
+</head>
+<body>
+   <header style="height: 30px;background-color: ">
+   </header>
+   <div class="container">
+   <img  src="img/profilepic.png" style="height: 120px;"/>
+ <h2>Factorial</h2>
+   <hr/>
+   <form name="cafForm">
+   			 Enter num  :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="num"  
+   			 style="width:20%;" class="form-control"/>
+   			 <br/><br/>
+   			 <input type="button" value="Go Ahead" class="btn btn-danger"  onclick="calFact();"/>
+   </form>
+    <hr/>
+     <span style="color:blue;font-size: 18px;" id="message"></span>
+   </div>
+</body>
+</html>
